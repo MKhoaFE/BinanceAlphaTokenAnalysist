@@ -1,0 +1,222 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.token-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.token-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.token-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.token-card.expired {
+  border-left: 4px solid #ff6b6b;
+  background: #fff5f5;
+}
+
+.token-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.token-name {
+  flex: 1;
+}
+
+.token-name .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.token-name .symbol {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.days-remaining {
+  text-align: right;
+  min-width: 100px;
+}
+
+.days-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  line-height: 1;
+}
+
+.days-remaining.expired .days-number {
+  color: #ff6b6b;
+}
+
+.days-label {
+  font-size: 0.85rem;
+  color: #999;
+  display: block;
+  margin-top: 4px;
+}
+
+.days-remaining.expired .days-label {
+  color: #ff8787;
+}
+
+.listing-date {
+  font-size: 0.85rem;
+  color: #888;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+}
+
+.refresh-button,
+.retry-button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+.refresh-button:hover,
+.retry-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.time-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.loading,
+.error,
+.empty-state {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.empty-state {
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .token-list {
+    grid-template-columns: 1fr;
+  }
+
+  .token-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .days-remaining {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tab {
+    width: 100%;
+  }
+}
